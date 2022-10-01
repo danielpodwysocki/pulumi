@@ -146,6 +146,7 @@ class HCloudProvider(Provider):
             "ubuntu22": "ubuntu-20.04",
             "debian11": "debian-11",
             "rocky9": "rocky-9",
+            "centos7": "centos-7",
         }
 
     def set_sizes(self):
@@ -210,9 +211,10 @@ class ScalewayProvider(Provider):
     def set_images(self):
         # curl -s 'https://api-marketplace.scaleway.com/images?page=1&per_page=100' | sed 's/par1/fr-par-1/g; s/ams1/nl-ams-1/g' | jq '.images | map({"key": .label | gsub("_";"-"), "value": .versions[0].local_images}) | from_entries' | grep -i rock
         self.images = {
-            "ubuntu22": "ubuntu-jammy",
-            "debian11": "debian-bullseye",
+            "ubuntu22": "ubuntu_jammy",
+            "debian11": "debian_bullseye",
             "rocky9": "rockylinux_9",
+            "centos7": "centos_7.9",
         }
 
     def set_sizes(self):
