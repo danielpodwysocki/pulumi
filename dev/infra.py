@@ -75,6 +75,7 @@ class Provider(ABC):
             "ubuntu20": "ubuntu_20_04",
             "debian11": "debian_11",
             "rocky9": "rocky_9",
+            "rocky8": "rocky_8",
         }
 
     def provision_private_network(self):
@@ -145,6 +146,7 @@ class HCloudProvider(Provider):
         self.images = {
             "ubuntu22": "ubuntu-20.04",
             "debian11": "debian-11",
+            "rocky8": "rocky-8",
             "rocky9": "rocky-9",
             "centos7": "centos-7",
         }
