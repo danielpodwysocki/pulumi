@@ -8,7 +8,7 @@ SSH_KEYS = ["daniel@Daniels-MBP"]
 
 HETZNER_LOCATION = "fsn1"
 
-servers = [infra.Server("xardas", "small", "rocky9", "172.21.0.10")]
+servers = [infra.Server("xardas", "small", "centos7", "172.21.0.10")]
 
 hetzner_config = {
     "network_config": {
