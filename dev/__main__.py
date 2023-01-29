@@ -1,6 +1,7 @@
 """A Python Pulumi program"""
-import infra
+# import infra
 import logging
+from pulumi_flexinfra import infra, hetzner, scaleway, server
 
 logger = logging.getLogger(__name__)
 
@@ -8,7 +9,7 @@ SSH_KEYS = ["daniel@Daniels-MBP"]
 
 HETZNER_LOCATION = "fsn1"
 
-servers = [infra.Server("xardas", "small", "centos7", "172.21.0.10")]
+servers = [server.Server("xardas", "small", "centos7", "172.21.0.10")]
 
 hetzner_config = {
     "network_config": {
@@ -22,8 +23,8 @@ hetzner_config = {
 scaleway_config = {"network_config": {"private_ip_range": "172.22.0.0/16"}}
 
 # todo: move out ssh keys to the infra class
-hetzner_provider = infra.HCloudProvider(SSH_KEYS, hetzner_config)
-scaleway_provider = infra.ScalewayProvider(SSH_KEYS, scaleway_config)
+hetzner_provider = hetzner.HCloudProvider(SSH_KEYS, hetzner_config)
+scaleway_provider = scaleway.ScalewayProvider(SSH_KEYS, scaleway_config)
 
 providers = {"hetzner": hetzner_provider, "scaleway": scaleway_provider}
 

@@ -1,3 +1,2 @@
-pulumi>=3.0.0,<4.0.0
-pulumi-hcloud
-pulumiverse_scaleway
+git+https://github.com/danielpodwysocki/pulumi_flexinfra@main#egg=pulumi_flexinfra
+
