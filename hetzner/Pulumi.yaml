@@ -1,5 +1,5 @@
-name: dev
-description: A minimal Python Pulumi program
+name: hetzner
+description: Deploying my Hetzner lab via pulumi
 runtime:
     name: python
     options:
