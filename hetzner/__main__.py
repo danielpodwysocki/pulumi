@@ -6,10 +6,11 @@ from pulumi_flexinfra import infra, hetzner, scaleway, server
 logger = logging.getLogger(__name__)
 
 SSH_KEYS = ["daniel@Daniels-MBP"]
+k3s_tags = {"k3s":"group"}
 
 HETZNER_LOCATION = "fsn1"
 
-servers = [server.Server("xardas", "small", "centos7", "172.21.0.10")]
+servers = [server.Server("xardas", "small", "rocky9", "172.21.0.10", k3s_tags)]
 
 hetzner_config = {
     "network_config": {
